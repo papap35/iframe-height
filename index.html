@@ -13,8 +13,7 @@
 			console.log('load', event);
 			window.addEventListener('resize', function(event) {
 				console.log('resize', event);
-				console.log('height', document.body.clientHeight)
-				parent.height = document.body.clientHeight;
+				parent.postMessage( {height: document.body.clientHeight}, '*');
 			});
 			window.dispatchEvent(new Event('resize'));
 		});
