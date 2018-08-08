@@ -9,11 +9,15 @@
 <body>
     <div style="height: 1000px;">QQ</div>
     <script>
-        window.addEventListener('resize', function(event) {
-	    window.addEventListener('load', function(event) {
-                parent.height = document.body.clientHeight;
-            })
-	})
+		window.addEventListener('load', function(event) {
+			console.log('load', event);
+			window.addEventListener('resize', function(event) {
+				console.log('resize', event);
+				console.log('height', document.body.clientHeight)
+				parent.height = document.body.clientHeight;
+			});
+			window.dispatchEvent(new Event('resize'));
+		});
     </script>
 </body>
 </html>
