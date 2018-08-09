@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style type="text/css">
+        
+    </style>
 </head>
+
 <body>
-    <div style="height: 1000px;">QQ</div>
+    <iframe class="iframePromoXML" frameborder="0" scrolling="no" style="width:100%;"></iframe>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+        crossorigin="anonymous"></script>
     <script>
-		window.addEventListener('load', function(event) {
-			console.log('load', event);
-			window.addEventListener('resize', function(event) {
-				console.log('resize', event);
-				parent.postMessage( {height: document.body.clientHeight}, '*');
-			});
-			window.dispatchEvent(new Event('resize'));
-		});
+        window.addEventListener("message", function (event) {
+            console.log('fin height', event.data.monthHeight)
+            $('.iframePromoXM').height(event.data.monthHeight);
+        }, false);
+        $('.iframePromoXM').attr('src', 'https://papap35jp.github.io/iframe-height/');
     </script>
 </body>
+
 </html>
