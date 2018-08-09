@@ -7,22 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style type="text/css">
-        
     </style>
 </head>
 
 <body>
     <iframe class="iframePromoXML" frameborder="0" scrolling="no" style="width:100%;"></iframe>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
     <script>
-         $(window).on('load', function (event) {
+        $(function () {
             window.addEventListener("message", function (event) {
                 console.log('fin height', event.data.monthHeight)
                 $('.iframePromoXM').height(event.data.monthHeight);
             }, false);
             $('.iframePromoXM').attr('src', 'https://papap35jp.github.io/iframe-height/');
-         });
+        });
     </script>
 </body>
 
