@@ -17,7 +17,7 @@
     <script>
         $(function () {
             window.addEventListener("message", function (event) {
-                console.log('fin height', event.data.monthHeight)
+                console.log('iframe data', event.data)
                 $('.iframePromoXML').height(event.data.monthHeight);
             }, false);
             $('.iframePromoXML').attr('src', 'https://papap35jp.github.io/iframe-height/');
